@@ -45,12 +45,16 @@
     </div>
 
   </div> -->
-<div>
-  In time
+<div class="col-md-3 mb-3">
+  <label for="validationDefault05">Date</label>
     <input type="datetime-local" id="birthdaytime" name="birthdaytime"  [ngModel]="inDateTime |  date:'yyyy-MM-ddTHH:mm'" [disabled]="true">
-    Out time
-  <input type="date" id="birthdaytime1" name="birthdaytime1"
-   [ngModel]="myDate | date:'yyyy-MM-dd'" >
+  <label for="validationDefault05">Inn time</label>
+ <input type="time" id="birthdaytime1" name="birthdaytime1"
+   [ngModel]="myDate | date:'HH:mm'" >
+ <label for="validationDefault05">Out-time</label>
+    <input type="time" id="birthdaytime2" name="birthdaytime2"
+   [ngModel]="myDate | date:'HH:mm'" >
+
 </div>
   <button class="btn btn-primary" type="submit">Submit Task </button>
   
