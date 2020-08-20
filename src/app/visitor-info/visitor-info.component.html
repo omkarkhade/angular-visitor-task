@@ -49,25 +49,33 @@
     </div>
 
   </div> -->
+<div class="form-row">
+
 <div class="col-md-3 mb-3">
   <label for="date">Date</label>
-    <!-- <input type="datetime-local" id="date" 
+    <input type="datetime" id="date" 
     ngModel name=date   
-    [ngModel]="inDateTime |  date:'yyyy-MM-ddTHH:mm'"
-     [disabled]="true"> -->
-     <input type="date" id="date" 
+    [ngModel]="inDateTime |  date:'yyyy-MM-dd'"
+     [disabled]="true">
+     <!-- <input type="datetime" id="date" 
     ngModel name=date   #date="ngModel" 
   [value]="inDateTime "
-     [disabled]="false"> 
+     [disabled]="true">  -->
+</div>
 
+<div class="col-md-3 mb-3">
   <label for="inTime">Inn time</label>
  <input type="time" id="intime"
    ngModel name=intime  #intime="ngModel" >
+</div>
+
+<div class="col-md-3 mb-3">
  <label for="outTime">Out-time</label>
     <input type="time" id="outtime" 
    ngModel name=outtime  #outtime="ngModel" >
+</div>
 
 </div>
-  <button class="btn btn-primary" type="submit">Submit Task </button>
+  <button class="btn btn-primary" type="submit">Submit</button>
   
 </form>
