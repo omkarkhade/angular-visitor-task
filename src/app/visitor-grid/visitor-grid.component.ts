@@ -18,7 +18,7 @@ gridData:any;
   getLogs(){
     
       this.gridData= JSON.parse(localStorage.getItem('logs'));
-     this.visitorData.push(this.gridData);
+     //this.visitorData.push(this.gridData);
     
   }
 
