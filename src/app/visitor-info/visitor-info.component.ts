@@ -13,6 +13,8 @@ export class VisitorInfoComponent implements OnInit {
   inDateTime=new Date();
   data:any;
   visitorData:string[]
+  showList = [];
+
   constructor(private datePipe: DatePipe) { }
 
   ngOnInit() {
@@ -27,11 +29,16 @@ onSubmit(form:any){
   //console.log(this.myDate);
     //console.log(x.value);
     // add to local storage
-    form.value.date = this.data;
-    this.data=form.value
    // this.visitorData.push(JSON.stringify(this.data))
-   //this.visitorData.push(this.data)
-    localStorage.setItem('logs',JSON.stringify(this.data))
+    form.value.date = this.data;
+
+   this.showList.push(form.value)
+    this.showList = this.showList.concat(JSON.parse(localStorage.getItem('logs')||'[]'));
+    localStorage.setItem("logs", JSON.stringify(this.showList));
+
+    // this.data=form.value
+    // localStorage.setItem('logs',JSON.stringify(this.data))
+    window.location.reload() 
     //form.resetForm();
   
 
