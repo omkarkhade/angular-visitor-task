@@ -1,3 +1,52 @@
-<p>
-visitor-grid works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h4>Visitor List</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+    <th>Meeting Type</th>
+    <th>Contact Person</th>
+    <th>Date</th>
+    <th>In-Time</th>
+    <th>Out-Time</th>
+  </tr>
+  <tr *ngFor="let data of visitorData">
+    <td>{{data.personName}}</td>
+    <td>{{data.personEmail}} </td>
+    <td>{{data.city}}</td>
+    <td>{{data.visit}}</td>
+    <td>{{data.contactPerson}}</td>
+    <td>{{data.date}}</td>
+    <td>{{data.intime}}</td>
+    <td>{{data.outtime}}</td>
+  </tr>
+  
+
+</table>
+
+</body>
+</html>

@@ -3,24 +3,24 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="name">Name</label>
-      <input ngModal name=personName  #personName="ngModal"
-       type="text" class="form-control" id="personName" value="" required>
+      <input ngModel name=personName  #personName="ngModel"
+       type="text" class="form-control" id="personName" autocomplete="off" value="" required>
     </div>
     <div class="col-md-6 mb-3">
       <label for="email">Email</label>
-      <input  ngModal name=personEmail  #personEmail="ngModal"  type="Email" class="form-control" id="personEmail" value="" required>
+      <input  ngModel name=personEmail  #personEmail="ngModel"  type="Email" class="form-control" id="personEmail" value="" autocomplete="off" required>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="city">City</label>
-      <input  ngModal name=city  #city="ngModal" 
-      type="text" class="form-control" id="city" required>
+      <input  ngModel name=city  #city="ngModel" 
+      type="text" class="form-control" id="city" autocomplete="off" required>
     </div>
     
     <div class="col-md-3 mb-3">
       <label for="visit">Type of Visit</label>
-      <select  ngModal name=visit  class="custom-select" id="visit" required>
+      <select  ngModel name=visit  class="custom-select" id="visit" required>
         <option selected disabled value="">Select</option>
         <option value="meeting">Meeting</option>
        <option value="delivery">Delivery</option>
@@ -30,8 +30,8 @@
     </div>
     <div class="col-md-3 mb-3">
       <label for="contactPerson">Person to visit</label>
-      <input ngModal name=contactPerson  #contactPerson="ngModal" 
-      type="text" class="form-control" id="contactPerson" required>
+      <input ngModel name=contactPerson  #contactPerson="ngModel" 
+      type="text" class="form-control"  autocomplete="off" id="contactPerson" required>
     </div>
   </div>
   <!-- <div class ="form-row">
@@ -44,19 +44,28 @@
             value="{{ myDate | date:'yyyy-MM-dd HH:mm' }}" 
             [(ngModel)]="myDate"
             formControlName="date" 
+             date:'yyyy-MM-ddTHH:mm'"
           />
     </div>
 
   </div> -->
 <div class="col-md-3 mb-3">
   <label for="date">Date</label>
-    <input type="datetime-local" id="birthdaytime" name="birthdaytime"  [ngModel]="inDateTime |  date:'yyyy-MM-ddTHH:mm'" [disabled]="true">
+    <!-- <input type="datetime-local" id="date" 
+    ngModel name=date   
+    [ngModel]="inDateTime |  date:'yyyy-MM-ddTHH:mm'"
+     [disabled]="true"> -->
+     <input type="date" id="date" 
+    ngModel name=date   #date="ngModel" 
+  [value]="inDateTime "
+     [disabled]="false"> 
+
   <label for="inTime">Inn time</label>
- <input type="time" id="birthdaytime1" name="birthdaytime1"
-   [ngModel]="myDate | date:'HH:mm'" >
+ <input type="time" id="intime"
+   ngModel name=intime  #intime="ngModel" >
  <label for="outTime">Out-time</label>
-    <input type="time" id="birthdaytime2" name="birthdaytime2"
-   [ngModel]="myDate | date:'HH:mm'" >
+    <input type="time" id="outtime" 
+   ngModel name=outtime  #outtime="ngModel" >
 
 </div>
   <button class="btn btn-primary" type="submit">Submit Task </button>

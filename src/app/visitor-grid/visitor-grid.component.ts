@@ -8,17 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class VisitorGridComponent implements OnInit {
 
   constructor() { }
-gridData:any=[];
+  visitorData =[]
+gridData:any;
+
   ngOnInit() {
-    localStorage.getItem
+    this.getLogs()
   }
 
   getLogs(){
-    if( localStorage.getItem('logs')=== null){
-      this.gridData=[];
-    }else{
-      this.gridData= JSON.parse(localStorage.getItem('logs'))
-    }
+    
+      this.gridData= JSON.parse(localStorage.getItem('logs'));
+     this.visitorData.push(this.gridData);
+    
   }
 
 }
