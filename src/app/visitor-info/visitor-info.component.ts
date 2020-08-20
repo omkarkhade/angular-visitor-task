@@ -14,7 +14,12 @@ export class VisitorInfoComponent implements OnInit {
   ngOnInit() {
    // this.inDateTime=new Date().toISOString().slice(0, 16); 
   }
-onSubmit(){
-  console.log(this.myDate);
+onSubmit(x){
+  //console.log(this.myDate);
+    console.log(x.value);
+    // add to local storage
+    // localStorage.setItem('logs',JSON.stringify(x.value))
+  
+
 }
 }

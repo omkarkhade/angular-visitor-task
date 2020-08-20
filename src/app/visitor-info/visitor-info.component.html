@@ -1,34 +1,37 @@
 
-<form (ngSubmit)="onSubmit()">
+<form  #frm="ngForm" (ngSubmit)="onSubmit(frm)">
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationDefault01">Name</label>
-      <input type="text" class="form-control" id="validationDefault01" value="" required>
+      <label for="name">Name</label>
+      <input ngModal name=personName  #personName="ngModal"
+       type="text" class="form-control" id="personName" value="" required>
     </div>
     <div class="col-md-6 mb-3">
-      <label for="validationDefault02">Email</label>
-      <input type="text" class="form-control" id="validationDefault02" value="" required>
+      <label for="email">Email</label>
+      <input  ngModal name=personEmail  #personEmail="ngModal"  type="Email" class="form-control" id="personEmail" value="" required>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationDefault03">City</label>
-      <input type="text" class="form-control" id="validationDefault03" required>
+      <label for="city">City</label>
+      <input  ngModal name=city  #city="ngModal" 
+      type="text" class="form-control" id="city" required>
     </div>
     
     <div class="col-md-3 mb-3">
-      <label for="validationDefault04">Type of Visit</label>
-      <select class="custom-select" id="validationDefault04" required>
+      <label for="visit">Type of Visit</label>
+      <select  ngModal name=visit  class="custom-select" id="visit" required>
         <option selected disabled value="">Select</option>
-        <option>Meeting</option>
-       <option>Delivery</option>
-        <option>Personal</option>
+        <option value="meeting">Meeting</option>
+       <option value="delivery">Delivery</option>
+        <option value="personal">Personal</option>
 
       </select>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationDefault05">Person to visit</label>
-      <input type="text" class="form-control" id="validationDefault05" required>
+      <label for="contactPerson">Person to visit</label>
+      <input ngModal name=contactPerson  #contactPerson="ngModal" 
+      type="text" class="form-control" id="contactPerson" required>
     </div>
   </div>
   <!-- <div class ="form-row">
@@ -46,12 +49,12 @@
 
   </div> -->
 <div class="col-md-3 mb-3">
-  <label for="validationDefault05">Date</label>
+  <label for="date">Date</label>
     <input type="datetime-local" id="birthdaytime" name="birthdaytime"  [ngModel]="inDateTime |  date:'yyyy-MM-ddTHH:mm'" [disabled]="true">
-  <label for="validationDefault05">Inn time</label>
+  <label for="inTime">Inn time</label>
  <input type="time" id="birthdaytime1" name="birthdaytime1"
    [ngModel]="myDate | date:'HH:mm'" >
- <label for="validationDefault05">Out-time</label>
+ <label for="outTime">Out-time</label>
     <input type="time" id="birthdaytime2" name="birthdaytime2"
    [ngModel]="myDate | date:'HH:mm'" >
 
